@@ -1,0 +1,23 @@
+{{>layouts/header}}
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Content</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#article}}
+<tr>
+        <th scope="row">{{id}}</th>
+        <td>{{title}}</td>
+        <td>{{content}}</td>
+    {{/article}}
+    </tbody>
+</table>
+<!-- 수정 링크 추가 -->
+<a href="/articles/{{article.id}}/edit" class="btn btn-primary">Edit</a>
+<a href="/articles">Go to Article List</a>
+{{>layouts/footer}}
