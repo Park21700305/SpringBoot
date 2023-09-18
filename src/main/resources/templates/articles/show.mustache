@@ -1,25 +1,26 @@
 {{>layouts/header}}
-
 <table class="table">
     <thead>
     <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Title</th>
-        <th scope="col">Content</th>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
     </tr>
     </thead>
     <tbody>
     {{#article}}
-<tr>
-        <th scope="row">{{id}}</th>
+    <tr>
+        <th>{{id}}</th>
         <td>{{title}}</td>
         <td>{{content}}</td>
-    {{/article}}
+    </tr>
+        {{/article}}
     </tbody>
 </table>
-<!-- 수정 링크 추가 -->
-<a href="/articles/{{article.id}}/edit" class="btn btn-primary">Edit</a>
-<!-- 삭제 링크 추가 -->
-<a href="/articles/{{article.id}}/delete" class="btn btn-danger">Delete</a>
-<a href="/articles">Go to Article List</a>
+<a href="/articles">Go To Article List</a>
+<a href="/articles/{{id}}/edit" class="btn btn-primary">Edit</a>
+<a href="/articles/{{id}}/delete" class="btn btn-danger">Delete</a>
+
+{{>comments/_comments}}
 {{>layouts/footer}}
